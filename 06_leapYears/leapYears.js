@@ -1,10 +1,13 @@
 const leapYears = function(date) {
-    if (Number.isInteger(date / 100) && Number.isInteger(date / 400)) {
+    const isCentury = date % 100 === 0;
+    const isDivisiblebyFour = date % 4 === 0;
+    const isDivisibleby400 = date % 400 === 0;
+
+    if (isDivisiblebyFour && (!isCentury || isDivisibleby400)) {
         return true;
-    } else if (Number.isInteger(date / 4) && !Number.isInteger(date / 100)){
-        return true;
+    } else {
+        return false;
     }
-    else return false;
 };
 
 // Do not edit below this line
