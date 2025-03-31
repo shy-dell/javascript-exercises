@@ -1,27 +1,19 @@
 const sumAll = function(start, end) {
-    let total = 0;
+    if (start < 0 
+        || end < 0
+        || !Number.isInteger(start)
+        || !Number.isInteger(end)
+    ) return "ERROR";
+    // use array destructuring to swap values if starts with high number
+    // https://www.freecodecamp.org/news/array-destructuring-in-es6-30e398f21d10/
+    if (start > end) [start, end] = [end, start];
 
-    if (start >= 0 
-        && end >= 0
-        && typeof start == "number" 
-        && typeof start == "number"
-        && Number.isInteger(start)
-        && Number.isInteger(end)
-    ) {
-        if(end > start){
-            for (let i = start; i <= end; i++) {
-                total = total + i;
-            }
-        } else {
-            for (let i = end; i <= start; i++) {
-                total = total + i;
-            }
-        }
-    } else {
-        total = "ERROR"
+    let total = 0;
+    for (let i = start; i <= end; i ++) {
+        total += i;
     }
     return total;
-};
+    }
 
 // Do not edit below this line
 module.exports = sumAll;
