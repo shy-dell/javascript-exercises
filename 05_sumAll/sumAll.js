@@ -1,11 +1,24 @@
-const sumAll = function(from, to) {
+const sumAll = function(start, end) {
     let total = 0;
-    if (from >= 0 && to >= 0) {
-        for (let i = from; i <= to; i++) {
-            total = total + i;
+
+    if (start >= 0 
+        && end >= 0
+        && typeof start == "number" 
+        && typeof start == "number"
+        && Number.isInteger(start)
+        && Number.isInteger(end)
+    ) {
+        if(end > start){
+            for (let i = start; i <= end; i++) {
+                total = total + i;
+            }
+        } else {
+            for (let i = end; i <= start; i++) {
+                total = total + i;
+            }
         }
     } else {
-        console.log("please provide only positive numbers as inputs")
+        total = "ERROR"
     }
     return total;
 };
