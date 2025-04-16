@@ -1,19 +1,13 @@
 const palindromes = function (forwards) {
     const alphaNum = 'abcdefghijklmnopqrstuvwxyz0123456789'
-    let arr = [...forwards
+    let cleanedString = forwards
         .toLowerCase()
-        .split(' ')
-        .join(',')]
+        .split('')
         .filter(letter => alphaNum.includes(letter))
-    let backwards = [...arr].reverse();
-    
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === backwards[i]) {
-            continue
-        } else {
-            return false
-        };
-    } return true;
+        .join('');
+    let backwards = cleanedString.split('').reverse().join('');
+
+    return cleanedString === backwards;
 };
 // Do not edit below this line
 module.exports = palindromes;
