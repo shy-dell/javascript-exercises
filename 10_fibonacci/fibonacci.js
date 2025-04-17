@@ -1,10 +1,9 @@
 const fibonacci = function(number) {
-    Number(number);
     let prevNumber = 0;
     let arr = [1];
-    if (number < 0) {
-        return "Oops"
-    } else if (number === 0) {
+    if (Number(number) < 0) {
+        return "OOPS"
+    } else if (Number(number) === 0) {
         return prevNumber;
     } else {
         for (let i = 0; i < number - 1; i++){
