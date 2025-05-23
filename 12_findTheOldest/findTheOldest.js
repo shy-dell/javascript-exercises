@@ -10,6 +10,7 @@ const findTheOldest = function(people) {
     });
     newPeople.sort((a,b) => b.age - a.age);
     return newPeople[0];
+    // add comment
 };
 
 // Do not edit below this line
